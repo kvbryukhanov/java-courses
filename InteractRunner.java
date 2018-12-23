@@ -5,6 +5,10 @@ import java.util.Scanner;
 */
 public class InteractRunner {
 
+	/**
+		Метод диалога с пользователем
+		@param arg is null
+	*/
 	public static void main(String[] arg) {
 		Scanner reader = new Scanner (System.in);
 		try {

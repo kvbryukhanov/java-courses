@@ -4,13 +4,18 @@
 
 public class ArgRunner {
 	
+	/**
+		@param первое число, второе число, операция
+	*/
+	
 	public static void main (String[] arg){
 		System.out.println("Calculate");
-		if (arg.length == 2) {
-			int first = Integer.valueOf(arg[0]);
-			int second = Integer.valueOf(arg[2]);
+		if (arg.length == 3) {
+			float first = Integer.valueOf(arg[1]);
+			float second = Integer.valueOf(arg[2]);
+			String operation = arg[0];
 			Calculator calc = new Calculator();
-			calc.add(first,second);
+			calc.add(operation,first,second);
 			System.out.println("Sum : " + calc.getResult());
 		}else {
 			System.out.println("Enter two parameters.");
