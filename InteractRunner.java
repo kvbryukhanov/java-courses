@@ -10,14 +10,27 @@ public class InteractRunner {
 		try {
 			Calculator calc = new Calculator();
 			String exit = "no";
+			String cleaning = "yes";
+			String first = "0";
 			while(!exit.equals("yes")) {
-				System.out.println("Enter first arg : ");
-				String first = reader.next();
+				if (cleaning.equals("yes")) {
+					System.out.println("Enter first arg : ");
+					first = reader.next();
+				}else {
+					first = String.valueOf(calc.getResult());
+					System.out.println("First arg is " + first);
+				}
 				System.out.println("Enter second arg : ");
 				String second = reader.next();
-				calc.add(Integer.valueOf(first), Integer.valueOf(second));
+				System.out.println("Enter operator : ");
+				String operator = reader.next();
+				calc.add(operator, Float.valueOf(first), Float.valueOf(second));
 				System.out.println("Result : " + calc.getResult());
-				calc.cleanResult();
+				System.out.println("Do you want clean the result? yes/no");
+				cleaning = reader.next(); 
+				if (cleaning.equals("yes")){
+					calc.cleanResult();
+				}
 				System.out.println("Exit : yes/no ");
 				exit = reader.next();
 			}
